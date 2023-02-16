@@ -7,7 +7,14 @@
 #define ABAJO 80
 #define IZQUIERDA 75
 #define DERECHA 77
-#define ESQ 27
+#define ESC 27
+
+int serpiente[200][2];
+int s = 1;
+int tamano = 5;
+int x = 10;
+int y = 12;
+char teclas;
 
 void gotoxy(int x, int y){
 	
@@ -40,12 +47,29 @@ void tablero(){
 	gotoxy(2, 23); printf ("%c", 200);
 	
 }
+	
+void guardar(){
+	
+	serpiente[s][0] = x;
+	serpiente [s][1] = y;
+	s++;
+	if(s == tamano){
+		
+		s = 1;
+		
+	}
+}
 
 using namespace std;
 
 int main(int argc, char *argv[]) {
 	
 	tablero();
+	
+	while(teclas != ESC){
+		
+	}
+	
 	system("pause>null");
 	
 	return 0;
