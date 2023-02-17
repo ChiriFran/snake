@@ -89,48 +89,31 @@ void borrar(){
 
 void movimiento(){
 	
-	if(kbhit()){
+	if (kbhit()){
 		
 		teclas = getch();
-			switch (teclas){
-			
-				case ARRIBA:
-			
-					if(dir != 2){
-				
-						dir!=1;
-				
-					}
-				break;
-			
-				case ABAJO:
-			
-					if(dir != 1){
-				
-						dir != 2;
-				
-					}
-				break;
-			
-				case DERECHA:
-			
-					if(dir != 4){
-				
-						dir != 3;
-				
-					}
-				break;
-			
-				case IZQUIERDA:
-			
-					if(dir != 3){
-				
-						dir != 4;
-				
-					}
-				break;
-			
-			}
+		 switch(teclas){
+			case ARRIBA:
+			 if (dir != 2){
+				 dir = 1;
+			 }
+			 break;
+			 case ABAJO:
+			 if (dir != 1){
+				 dir = 2;
+			 }
+			 break;
+			case DERECHA:
+			 if (dir != 4){
+				 dir = 3;
+			 }
+			 break;
+			case IZQUIERDA:
+			 if (dir != 3){
+				 dir = 4;
+			 }
+			 break;
+		 }
 		
 	}
 	
@@ -173,7 +156,7 @@ bool choque(){
 	
 	for (int j=tamano - 1; j<0; j--){
 		
-		if(serpiente [j][0] == x && serpiente [j][1] == j){
+		if(serpiente [j][0] == x && serpiente [j][1] == y){
 			
 			return false;
 		}
